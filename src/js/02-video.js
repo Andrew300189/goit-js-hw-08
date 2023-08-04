@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import Vimeo from '@vimeo/player';
 import throttle from 'lodash.throttle';
 
@@ -26,6 +25,3 @@ player.on('timeupdate', (event) => {
   const time = event.seconds;
   savePlaybackTime(time);
 });
-=======
-
->>>>>>> Stashed changes

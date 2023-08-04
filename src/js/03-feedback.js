@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import throttle from 'lodash.throttle';
 
 const form = document.querySelector('.feedback-form');
@@ -46,6 +45,4 @@ form.addEventListener('submit', (event) => {
 
 // Заполняем поля формы данными из локального хранилища при загрузке страницы
 populateFormFields();
-=======
->>>>>>> Stashed changes
 
