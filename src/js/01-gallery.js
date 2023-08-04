@@ -22,17 +22,15 @@ function createGalleryItem(item) {
   `;
 }
 
-
 const gallery = document.querySelector('.gallery');
 
-// Создаем HTML разметку для всех элементов галереи, используя функцию createGalleryItem и метод map для перебора массива galleryItems
-// Затем объединяем элементы массива в одну строку с помощью метода join('')
 const galleryItemsHTML = galleryItems.map((item) => createGalleryItem(item)).join('');
 
 // Вставляем разметку всех элементов галереи в конец контейнера галереи
 gallery.insertAdjacentHTML('beforeend', galleryItemsHTML);
 
-// Создаем новый экземпляр SimpleLightbox и передаем ему селектор для элементов галереи, которые будут являться ссылками для открытия изображений
+// Создаем новый экземпляр SimpleLightbox и передаем ему селектор для элементов галереи, 
+//которые будут являться ссылками для открытия изображений
 const lightbox = new SimpleLightbox('.gallery__item a', {
   captionsData: 'alt',         
   captionPosition: 'bottom',   
