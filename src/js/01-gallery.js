@@ -1,4 +1,5 @@
 // Add imports above this line
+<<<<<<< Updated upstream
 import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import { galleryItems } from './gallery-items.js';
@@ -61,3 +62,9 @@ function handleKeyPress(event) {
 
 console.log(galleryItems);
 
+=======
+import { galleryItems } from './gallery-items';
+// Change code below this line
+
+console.log(galleryItems);
+>>>>>>> Stashed changes
