@@ -8,7 +8,6 @@ const messageInput = form.querySelector('textarea[name="message"]');
 
 // Функция для сохранения данных полей в локальное хранилище с помощью throttle
 const saveFormData = throttle(() => {
-  
   const formData = {
     email: emailInput.value,
     message: messageInput.value,
@@ -34,16 +33,17 @@ const populateFormFields = () => {
   messageInput.value = formData.message;
 };
 
-// Слушаем событие input на форме, чтобы сохранять данные в хранилище
-form.addEventListener('input', () => {
-  saveFormData();
-});
-
-// Слушаем событие submit на форме, чтобы выводить данные в консоль и очищать хранилище и поля формы
-form.addEventListener('submit', (e) => {
+// Функция обработки отправки формы
+const handleFormSubmit = (e) => {
   e.preventDefault();
   // Получаем сохраненные данные из хранилища
   const formData = getSavedFormData();
+  
+  // Проверяем, заполнены ли все поля формы
+  if (!formData.email || !formData.message) {
+    return alert('Please fill in all the fields.');
+  }
+  
   // Выводим данные в консоль
   console.log(formData);
 
@@ -52,7 +52,15 @@ form.addEventListener('submit', (e) => {
   // Очищаем поля формы
   emailInput.value = '';
   messageInput.value = '';
+};
+
+// Слушаем событие input на форме, чтобы сохранять данные в хранилище
+form.addEventListener('input', () => {
+  saveFormData();
 });
+
+// Слушаем событие submit на форме, чтобы обработать отправку формы
+form.addEventListener('submit', handleFormSubmit);
 
 // При загрузке страницы заполняем поля формы данными из хранилища
 populateFormFields();

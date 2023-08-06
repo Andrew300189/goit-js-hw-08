@@ -16,9 +16,7 @@ const getSavedPlaybackTime = () => {
 };
 
 // Устанавливаем плееру время воспроизведения, сохраненное в локальном хранилище, и начинаем воспроизведение
-player.setCurrentTime(getSavedPlaybackTime()).then(() => {
-  player.play();
-});
+player.setCurrentTime(getSavedPlaybackTime());
 
 // Слушаем событие timeupdate, чтобы сохранять текущее время воспроизведения в локальное хранилище
 player.on('timeupdate', (event) => {
